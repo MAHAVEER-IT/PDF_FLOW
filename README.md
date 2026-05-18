@@ -1,239 +1,227 @@
-# 🎯 PDF Flow Application
+# PDF Flow
 
 <div align="center">
-
-![PDF Flow](public/images/pdf-flow-icon.png)
-
-**A modern, intuitive platform for converting and managing documents with ease**
-
-[![Next.js](https://img.shields.io/badge/Next.js-15.0-black?style=flat-square&logo=next.js)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19.2.4-blue?style=flat-square&logo=react)](https://react.dev/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.0-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
-
+  <img src="./public/images/logo.svg" alt="PDF Flow Logo" width="200" height="200" />
+  
+  **Premium file conversion for PDF, DOCX, PPT, XLSX, and images.**
+  
+  Clean conversions. Zero clutter. A fast, elegant path to perfect PDF exports.
 </div>
 
 ---
 
 ## ✨ Features
 
-PDF Flow offers a comprehensive suite of document conversion and management tools:
-
-<div align="center">
-
-### Document Conversion
-
-| ![DOCX to PDF](public/images/docx-icon.png) | ![Excel to PDF](public/images/excel-icon.png) | ![PPT to PDF](public/images/ppt-icon.png) | ![Image to PDF](public/images/png-icon.png) |
-|:---:|:---:|:---:|:---:|
-| **Word Documents** | **Spreadsheets** | **Presentations** | **Images** |
-| Convert DOCX files to PDF | Transform Excel sheets to PDF | Convert PowerPoint slides | Convert images to PDF |
-
-</div>
-
-### Core Capabilities
-
-- 📄 **Multi-Format Conversion** - Convert DOCX, Excel, PPT, and images to PDF
-- 🔗 **PDF Merging** - Combine multiple PDF files into a single document
-- 🚀 **Fast Processing** - Powered by Gotenberg service for reliable conversions
-- 💻 **User-Friendly Interface** - Intuitive step-by-step workflow
-- 🔄 **Batch Operations** - Handle multiple documents efficiently
-- 📦 **API Support** - RESTful endpoints for programmatic access
+- **DOCX to PDF** - Convert Word documents to PDF format
+- **PPT to PDF** - Convert PowerPoint presentations to PDF
+- **XLSX to PDF** - Convert Excel spreadsheets to PDF
+- **Image to PDF** - Convert PNG, JPG, and other image formats to PDF
+- **PDF Merge** - Combine multiple PDF files into a single document
+- **No Sign-in Required** - Completely free to use, no registration needed
+- **Clean UI** - Modern, intuitive interface with a stepper workflow
+- **Fast Processing** - Quick file conversions with minimal overhead
 
 ---
 
-## 🏗️ Project Structure
+## 🚀 Tech Stack
 
-```
-pdf-flow/
-├── app/
-│   ├── api/
-│   │   ├── convert/          # Document conversion endpoints
-│   │   └── merge/            # PDF merging endpoints
-│   ├── components/
-│   │   └── StepperFlow.js    # Main workflow component
-│   ├── convert/              # Conversion pages
-│   │   ├── docx-to-pdf/
-│   │   ├── excel-to-pdf/
-│   │   ├── image-to-pdf/
-│   │   ├── pdf-merge/
-│   │   └── ppt-to-pdf/
-│   ├── layout.js
-│   ├── page.js               # Home page
-│   └── globals.css
-├── public/
-│   └── images/               # UI icons and assets
-├── gotenberg-service/        # Gotenberg Docker configuration
-└── package.json
-```
+- **Framework:** [Next.js 15](https://nextjs.org/)
+- **React:** 19.2.4
+- **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
+- **PDF Manipulation:** [pdf-lib](https://github.com/Hopding/pdf-lib)
+- **ESLint:** 9 (Code quality & linting)
+- **Build Tool:** Next.js built-in compiler with SWC
 
 ---
 
-## 🚀 Quick Start
+## 📋 Prerequisites
 
-### Prerequisites
+- Node.js 18.x or higher
+- npm or yarn package manager
 
-- **Node.js** 18.0 or higher
-- **npm** or **yarn**
-- **Docker** (for Gotenberg service)
+---
 
-### Installation
+## 🛠️ Installation
 
-1. **Clone the repository**
+1. **Clone the repository:**
    ```bash
    git clone <repository-url>
    cd pdf-flow
    ```
 
-2. **Install dependencies**
+2. **Install dependencies:**
    ```bash
    npm install
    ```
 
-3. **Start Gotenberg service** (in a separate terminal)
-   ```bash
-   cd gotenberg-service
-   docker build -t gotenberg-service .
-   docker run -p 3000:3000 gotenberg-service
-   ```
-
-4. **Run the development server**
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**
-   Navigate to [http://localhost:3000](http://localhost:3000)
+3. **Set up environment variables (if needed):**
+   Create a `.env.local` file in the root directory and add any necessary configuration.
 
 ---
 
-## 📦 Tech Stack
+## 🎯 Getting Started
 
-### Frontend
-- **Next.js 15** - React-based framework with built-in optimization
-- **React 19** - Modern UI library
-- **Tailwind CSS 4** - Utility-first CSS framework
-- **PDF-Lib** - PDF manipulation library
+### Development Mode
 
-### Backend Services
-- **Gotenberg** - Docker-based document conversion service
-- **Node.js API Routes** - RESTful endpoints
-
-### Development Tools
-- **ESLint 9** - Code quality and style
-- **Babel React Compiler** - Optimized React compilation
-
----
-
-## 🎨 Usage
-
-### Converting Documents
-
-1. **Select Conversion Type** - Choose from available formats
-2. **Upload File** - Submit your document
-3. **Configure Options** - Set conversion parameters if needed
-4. **Download Result** - Get your converted PDF
-
-### Merging PDFs
-
-1. **Navigate to PDF Merge** - Go to the merge section
-2. **Upload Multiple PDFs** - Select files to combine
-3. **Arrange Order** - Customize the merge sequence
-4. **Download Merged File** - Get the final combined PDF
-
----
-
-## 🔌 API Endpoints
-
-### Convert Document
-```http
-POST /api/convert
-Content-Type: multipart/form-data
-
-{
-  "file": <file>,
-  "format": "docx|excel|ppt|image"
-}
-```
-
-### Merge PDFs
-```http
-POST /api/merge
-Content-Type: multipart/form-data
-
-{
-  "files": [<file1>, <file2>, ...]
-}
-```
-
----
-
-## 📝 Available Scripts
+Start the development server:
 
 ```bash
-# Development server
 npm run dev
+```
 
-# Production build
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+### Production Build
+
+Build the application for production:
+
+```bash
 npm run build
+```
 
-# Start production server
+Start the production server:
+
+```bash
 npm start
+```
 
-# Run linting
+### Linting
+
+Check code quality:
+
+```bash
 npm run lint
 ```
 
 ---
 
+## 📁 Project Structure
+
+```
+pdf-flow/
+├── app/
+│   ├── components/
+│   │   └── StepperFlow.js        # Stepper flow component for conversion workflow
+│   ├── convert/
+│   │   ├── page.js               # Main conversion page
+│   │   ├── docx-to-pdf/
+│   │   │   └── page.js          # DOCX to PDF conversion
+│   │   ├── excel-to-pdf/
+│   │   │   └── page.js          # XLSX to PDF conversion
+│   │   ├── image-to-pdf/
+│   │   │   └── page.js          # Image to PDF conversion
+│   │   ├── pdf-merge/
+│   │   │   └── page.js          # PDF merge functionality
+│   │   └── ppt-to-pdf/
+│   │       └── page.js          # PPT to PDF conversion
+│   ├── layout.js                 # Root layout with global styles
+│   ├── page.js                   # Home/landing page
+│   ├── error.js                  # Error page
+│   ├── not-found.js              # 404 page
+│   └── globals.css               # Global styles
+├── public/
+│   └── images/                   # Static images and assets
+├── next.config.mjs               # Next.js configuration
+├── tailwind.config.js            # Tailwind CSS configuration
+├── postcss.config.mjs            # PostCSS configuration
+├── eslint.config.mjs             # ESLint configuration
+├── package.json                  # Project dependencies
+└── README.md                      # Project documentation
+```
+
+---
+
+## 🎨 Key Components
+
+### StepperFlow.js
+A reusable component that manages the step-by-step workflow for file conversions, providing a user-friendly interface for users to select conversion types and upload files.
+
+### Conversion Pages
+Each conversion module (docx-to-pdf, ppt-to-pdf, etc.) contains its own page.js file that handles:
+- File upload functionality
+- Conversion logic using pdf-lib
+- Download of converted files
+
+---
+
+## 📦 Dependencies
+
+### Production
+- **next** (^15) - React framework for production
+- **react** (19.2.4) - JavaScript library for UI
+- **react-dom** (19.2.4) - React DOM rendering
+- **pdf-lib** (^1.17.1) - PDF manipulation library
+
+### Development
+- **@tailwindcss/postcss** (^4) - Tailwind CSS PostCSS plugin
+- **tailwindcss** (^4) - Utility-first CSS framework
+- **eslint** (^9) - JavaScript linting tool
+- **eslint-config-next** (^15) - ESLint configuration for Next.js
+- **babel-plugin-react-compiler** (1.0.0) - React compiler plugin
+
+---
+
+## 🔧 Configuration
+
+### Tailwind CSS
+The project uses Tailwind CSS 4 with PostCSS for styling. Custom styles are located in `app/globals.css`.
+
+### Next.js Config
+The `next.config.mjs` file contains Next.js configuration options, including file upload size limit handling.
+
+### ESLint
+Code quality is maintained using ESLint 9 with Next.js recommended rules.
+
+---
+
+## 🌐 Usage
+
+1. **Navigate to the application** at `http://localhost:3000`
+2. **Click "Start a conversion"** on the landing page
+3. **Select your conversion type:**
+   - DOCX to PDF
+   - PPT to PDF
+   - XLSX to PDF
+   - Image to PDF
+   - PDF Merge
+4. **Upload your file(s)**
+5. **Download the converted PDF**
+
+---
+
+## 🐛 Troubleshooting
+
+- **Port 3000 already in use:** Change the port by running `npm run dev -- -p 3001`
+- **Module not found errors:** Run `npm install` to ensure all dependencies are installed
+- **Build failures:** Clear `.next` folder and rebuild: `rm -rf .next && npm run build`
+
+---
+
+## 📝 License
+
+[Add your license information here]
+
+---
+
 ## 🤝 Contributing
 
-We welcome contributions! Please feel free to:
-
-- Report bugs by opening an issue
-- Suggest new features
-- Submit pull requests with improvements
-- Improve documentation
+[Add contribution guidelines if applicable]
 
 ---
 
-## 📄 License
+## 📧 Support
 
-This project is licensed under the MIT License - see the LICENSE file for details.
-
----
-
-## 🆘 Troubleshooting
-
-### Gotenberg Service Not Connecting
-- Ensure Docker is running
-- Check port 3000 availability
-- Verify Gotenberg container logs
-
-### Conversion Failures
-- Verify file format is supported
-- Check file size limits
-- Review browser console for errors
-
-### Performance Issues
-- Clear browser cache
-- Restart development server
-- Check system resources
+For issues, bugs, or feature requests, please [open an issue on the repository/contact support].
 
 ---
 
-## 📞 Support
+## 🎓 Learning Resources
 
-For questions, issues, or suggestions:
-- Open an issue on the repository
-- Check existing documentation
-- Review the project's AGENTS.md for advanced configuration
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev)
+- [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+- [pdf-lib Documentation](https://pdf-lib.js.org/)
 
 ---
 
-<div align="center">
-
-**Made with ❤️ for seamless document management**
-
-[⬆ Back to Top](#-pdf-flow-application)
-
-</div>
+**Made with ❤️ by PDF Flow Team**
